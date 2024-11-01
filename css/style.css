@@ -1,9 +1,9 @@
 /********** Template CSS **********/
 :root {
-    --primary: #00008B;
-    --secondary: gold;
-    --light: #F4F7FE;
-    --dark: #14183E;
+    --primary: orange;
+    --secondary: #00008B;
+    --light: #fff;
+    --dark: #000000;
 }
 
 
@@ -181,6 +181,61 @@ h6,
     }
 }
 
+/* Common styles for carousel overlay and glassmorphic content */
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.glassmorphic {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+/* Unique styles for each slide content positioning and animation */
+
+/* Slide 1 content - centered on left */
+.custom-caption-slide1 {
+    top: 20%;
+    left: 10%;
+    text-align: left;
+}
+
+/* Slide 2 content - centered on right */
+.custom-caption-slide2 {
+    top: 50%;
+    right: 10%;
+    text-align: right;
+}
+
+/* Slide 3 content - bottom center */
+.custom-caption-slide3 {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Button styling */
+.carousel-caption a.btn {
+    font-weight: 600;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.carousel-caption a.btn:hover {
+    transform: scale(1.05);
+}
+
+
 /*about update*/
 .about-section {
     background: white; /* White background for content section */
@@ -212,9 +267,13 @@ h6,
     border-radius: 8px;
 }
 
+/* Orange text with black outline */
 .text-golden {
-    color: #daa520; /* Gold text for headings */
+    color: orange; /* Primary text color */
+    
+    font-weight: bold; /* Optional: Make text bold for more impact */
 }
+
 
 .values-section h6 i {
     font-size: 1.5rem;
@@ -624,7 +683,10 @@ h1 {
 /* Zoom and Shadow on Hover */
 .service-item:hover {
     transform: scale(1.1);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    opacity:0.9;
+    cursor: pointer;
 }
 
 /* Smooth Text Color Transition */
@@ -635,7 +697,7 @@ h1 {
 }
 .service-item:hover h5,
 .service-item:hover p {
-    color: #FFD700;
+    color: black;
 }
 
 /* Button Styling */
