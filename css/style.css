@@ -151,12 +151,6 @@ h6,
 
 
 /* carousel animation */
-.glassmorphic {
-    background: rgba(255, 255, 255, 0.3); /* Whitish background with transparency */
-    backdrop-filter: blur(15px); /* Blur effect for the glassmorphic look */
-    border-radius: 15px; /* Optional: adds rounded corners */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-}
 
 .carousel-item {
     transition: transform 0.5s ease-in-out; /* Smooth transition for the carousel item */
@@ -273,11 +267,11 @@ h6,
 
 /* Glassmorphic Background for Carousel Content */
 .glassmorphic {
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-    backdrop-filter: blur(15px); /* Blur effect */
+   
+    backdrop-filter: blur(2px); /* Blur effect */
     -webkit-backdrop-filter: blur(15px); /* Safari support */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+   
     border-radius: 16px; /* Rounded corners */
     padding: 40px; /* Inner padding for spacing */
 }
@@ -312,16 +306,45 @@ h6,
 /* Ensures Carousel Caption Appears Above Overlay */
 .carousel-caption {
     z-index: 2;
+   
+}
+/* Base Styling for Desktop */
+.custom-caption-left {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 50%; /* Wide for desktop */
+    text-align: left;
+    padding: 2rem;
 }
 
-/* Glassmorphic Effect */
-.glassmorphic {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/* Tablet View */
+@media (max-width: 768px) {
+    .custom-caption-left {
+        top: 65%; /* Adjusted position */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center horizontally and vertically */
+        max-width: 80%; /* Slightly narrower on tablet */
+        padding: 1.5rem;
+        text-align: center; /* Center-align text */
+    }
 }
+
+/* Mobile View */
+@media (max-width: 576px) {
+    .custom-caption-left {
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Fully center horizontally and vertically */
+        max-width: 90%; /* Nearly full width on mobile */
+        padding: 1rem;
+        text-align: center; /* Center-align text */
+        font-size: 0.9rem; /* Adjust text size */
+    }
+}
+
+
 
 /*** Hero Header with Parallax ***/
 .hero-header {
