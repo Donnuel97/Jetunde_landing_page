@@ -291,6 +291,87 @@ h6,
         padding: 20px; /* Reduce padding for smaller screens */
     }
 }
+/* Team Section Background and Overlay */
+/* Parallax Background */
+#team {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 100px 0;
+}
+
+/* Overlay */
+#team .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Glassmorphic Effect */
+.glassmorphic-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+/* Text styling for better readability */
+.glassmorphic-content h2,
+.glassmorphic-content h1,
+.glassmorphic-content p {
+    color: white;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 767px) {
+    #team {
+        padding: 60px 0;
+        background-attachment: scroll;
+    }
+    .glassmorphic-content {
+        padding: 20px;
+        text-align: center;
+    }
+}
+/* Team Section Background and Overlay */
+#team {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+}
+
+/* Overlay */
+#team .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+    z-index: 1;
+}
+
+/* Content within overlay */
+#team .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Team Item Styling */
+.team-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Carousel Overlay */
 .carousel-overlay {
@@ -372,7 +453,7 @@ h6,
 }
 
 .text-golden {
-    color: gold;
+    color: orange;
 }
 
 

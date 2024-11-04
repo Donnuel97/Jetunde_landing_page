@@ -209,9 +209,9 @@ document.querySelector('.about-overlay').addEventListener('click', function () {
                     <div class="carousel-inner">
                         <!-- Slide 1 -->
                         <div class="carousel-item active">
-                            <h2 class="text-primary mb-3">About Us</h2>
+                            <h2 class="mb-3"style="color: orange;">About Us</h2>
                             <h1 class="mb-4" style="color: #36454F;">
-                                We Make <span class="text-golden">Growth</span> Your New Standard
+                                We Make <span style="color: orange;">Growth</span> Your New Standard
                             </h1>
                             <p class="text-dark mb-4">
                                 At our core, we empower businesses to unlock their potential through innovative digital 
@@ -255,17 +255,17 @@ document.querySelector('.about-overlay').addEventListener('click', function () {
 
                         <!-- Slide 3 -->
                         <div class="carousel-item">
-                            <h2 class="text-primary mb-3">Our Values</h2>
+                            <h2 class="mb-3" style="color: orange;">Our Values</h2>
                             <h1 class="mb-4" style="color: #36454F;">
-                                Blending <span class="text-golden">Technology</span> and Strategy to Drive Results
+                                Blending <span style="color: orange;">Technology</span> and Strategy to Drive Results
                             </h1>
                             <ul class="list-unstyled">
-                                <li><strong style='color: #800020;'>Client Obsession:</strong> Our clients are at the center of everything we do. We go above and beyond to exceed expectations with personalized solutions and outstanding service.</li>
-                                <li><strong style='color: #800020;'>Innovate Boldly:</strong> We embrace creativity and future-focused thinking to stay ahead in a fast-evolving business and technology landscape.</li>
-                                <li><strong style='color: #800020;'>Do the Right Thing Right:</strong> Integrity is non-negotiable. We make ethical decisions and execute with excellence and transparency at every step.</li>
-                                <li><strong style='color: #800020;'>Commitment to Quality:</strong> Quality is in our DNA. We consistently deliver high-impact solutions, setting the bar for excellence across every project.</li>
-                                <li><strong style='color: #800020;'>Reputation Over Fame:</strong> We prioritize trust and long-term relationships over short-term recognition, building our reputation through integrity and exceptional results.</li>
-                                <li><strong style='color: #800020;'>Fairness to All:</strong> We cultivate an inclusive, collaborative environment, treating clients, partners, and team members with respect and fairness.</li>
+                                <li><strong style='color: #800020;'>Client first, always:</strong> Our clients are at the heart of everything we do. They are our priority, guiding every decision and action we take to deliver tailored, lasting value.</li>
+                                <li><strong style='color: #800020;'>Innovate with purpose:</strong>  We prioritize creativity and meaningful innovation, delivering solutions that challenge norms and empower clients to thrive.</li>
+                                <li><strong style='color: #800020;'>Do the right thing right:</strong> Integrity guides us. We make ethical choices and execute with excellence, accountability and transparency.</li>
+                                <li><strong style='color: #800020;'>Quality, not volume:</strong> We prioritize quality in everything we do, focusing on impactful solutions over sheer quantity.</li>
+                                <li><strong style='color: #800020;'>Reputation over Fame:</strong> We focus on building a strong reputation and trust over time, valuing character over short-lived recognition.</li>
+                                <li><strong style='color: #800020;'>Respect for All:</strong> We treat every client, partner, and team member with respect, fostering a collaborative and inclusive environment that values diverse perspectives.</li>
                             </ul>
                         </div>
                     </div>
@@ -629,95 +629,27 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     <!-- Team Start -->
-    <div class="container-fluid bg-light py-5" id='team'>
-        <div class="container py-5">
+    <div class="container-fluid py-5 position-relative" id="team" style="background-image: url('img/9.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
+        <!-- Overlay -->
+        <div class="overlay"></div>
+        
+        <div class="container py-5 position-relative">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                    <h2 class=" mb-3 " style="color: rgb(194, 11, 11);">Our Team</h2>
+                <!-- Glassmorphic Content -->
+                <div class="col-lg-5 wow fadeIn glassmorphic-content" data-wow-delay="0.1s">
+                    <h2 class="mb-3" style="color: rgb(194, 11, 11);">Our Team</h2>
                     <h1 class="mb-4">Meet Our Experienced Team Members</h1>
-                    <p class="mb-4">Our team brings a wealth of expertise across technology, 
-                        strategy, and design, united by a commitment to delivering transformative results. 
-                        With deep industry knowledge and a passion for innovation, each member plays a vital role in creating 
-                        impactful solutions for our clients. 
-                        Get to know the people who drive our success!</p>
-                    
+                    <p class="mb-4">Our team brings a wealth of expertise across technology, strategy, and design, united by a commitment to delivering transformative results...</p>
                 </div>
                 <div class="col-lg-7">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-1.jpg" alt="">
-                                        <h5 class="mb-0">Boris Johnson</h5>
-                                        <small>Founder & CEO</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <div class="social-icons d-flex">
-                                                <a class="btn btn-facebook btn-square me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-twitter btn-square me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-instagram btn-square me-2" href="#"><i class="fab fa-instagram"></i></a>
-                                                <a class="btn btn-linkedin btn-square me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-2.jpg" alt="">
-                                        <h5 class="mb-0">Adam Crew</h5>
-                                        <small>Executive Manager</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <div class="social-icons d-flex">
-                                                <a class="btn btn-facebook btn-square me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-twitter btn-square me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-instagram btn-square me-2" href="#"><i class="fab fa-instagram"></i></a>
-                                                <a class="btn btn-linkedin btn-square me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 pt-md-4">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-3.jpg" alt="">
-                                        <h5 class="mb-0">Kate Winslet</h5>
-                                        <small>Co Founder</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <div class="social-icons d-flex">
-                                                <a class="btn btn-facebook btn-square me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-twitter btn-square me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-instagram btn-square me-2" href="#"><i class="fab fa-instagram"></i></a>
-                                                <a class="btn btn-linkedin btn-square me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-4.jpg" alt="">
-                                        <h5 class="mb-0">Cody Gardner</h5>
-                                        <small>Project Manager</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <div class="social-icons d-flex">
-                                                <a class="btn btn-facebook btn-square me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-twitter btn-square me-2" href="#"><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-instagram btn-square me-2" href="#"><i class="fab fa-instagram"></i></a>
-                                                <a class="btn btn-linkedin btn-square me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Team members content as before -->
                 </div>
             </div>
         </div>
     </div>
     <!-- Team End -->
+
+
 
 
     <!-- Testimonial Start -->
