@@ -456,7 +456,47 @@ h6,
     color: orange;
 }
 
+/* List styles */
+.values-list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
 
+/* Individual list item styles */
+.values-list li {
+    font-size: 1.1rem; /* Font size for the list items */
+    line-height: 1.6; /* Line height for better readability */
+    margin: 10px 0; /* Margin between list items */
+    position: relative; /* Positioning for custom bullet */
+    padding-left: 30px; /* Space for the custom bullet */
+}
+
+/* Custom bullet styles */
+.custom-bullet {
+    content: ''; /* Ensure it's treated as a block element */
+    position: absolute; /* Position relative to the li */
+    left: 0; /* Align to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical alignment */
+    width: 10px; /* Width of bullet */
+    height: 10px; /* Height of bullet */
+    background-color: black; /* Color of bullet */
+    border-radius: 50%; /* Make it circular */
+}
+
+/* Strong element inside list items */
+.values-list li strong {
+    color: orange; /* Color for the strong text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+   
+    
+    .values-list li {
+        font-size: 1rem; /* Adjusted font size for list items on smaller screens */
+    }
+}
 
 /* About Section Styles */
 .about-section {
