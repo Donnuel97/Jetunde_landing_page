@@ -471,18 +471,7 @@ h6,
     padding-left: 30px; /* Space for the custom bullet */
 }
 
-/* Custom bullet styles */
-.custom-bullet {
-    content: ''; /* Ensure it's treated as a block element */
-    position: absolute; /* Position relative to the li */
-    left: 0; /* Align to the left */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for vertical alignment */
-    width: 10px; /* Width of bullet */
-    height: 10px; /* Height of bullet */
-    background-color: black; /* Color of bullet */
-    border-radius: 50%; /* Make it circular */
-}
+/*
 
 /* Strong element inside list items */
 .values-list li strong {
