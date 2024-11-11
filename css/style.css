@@ -28,8 +28,10 @@
     bottom: 45px;
     z-index: 99;
 }
-
-
+/*** Custom CSS for dark blue background toast ***/
+.bg-dark-blue {
+    background-color: #003366; /* Dark blue */
+}
 /*** Heading ***/
 h1,
 h2,

@@ -719,8 +719,8 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
     Testimonial End -->
-
-   <!-- Contact Section Start -->
+   
+<!-- Contact Section Start -->
 <div class="container-fluid contact-section position-relative py-5" id="contact">
     <div class="parallax-bg" style="background-image: url('img/6.jpg');"></div>
     <div class="overlay"></div>
@@ -740,22 +740,22 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <!-- Contact Form -->
-                <form class="p-5 rounded-4 shadow-lg transparent-form">
+                <form id="contactForm" class="p-5 rounded-4 shadow-lg transparent-form">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                            <input type="text" class="form-control form-control-lg" name="name" placeholder="Your Name" required>
                         </div>
 
                         <div class="col-md-6">
-                            <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                            <input type="email" class="form-control form-control-lg" name="email" placeholder="Your Email" required>
                         </div>
 
                         <div class="col-12">
-                            <input type="text" class="form-control form-control-lg" placeholder="Subject" required>
+                            <input type="text" class="form-control form-control-lg" name="subject" placeholder="Subject" required>
                         </div>
 
                         <div class="col-12">
-                            <textarea class="form-control form-control-lg" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control form-control-lg" name="message" rows="5" placeholder="Your Message" required></textarea>
                         </div>
 
                         <div class="col-12 text-center">
@@ -763,12 +763,79 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                 </form>
+                
+                <!-- Loading Spinner -->
+                <div id="loadingSpinner" class="text-center my-3" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Toast Notification -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="submitToast" class="toast align-items-center text-bg-success border-0"  style="background-color: green;" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div class="toast-body" id="toastMessage">
+                                Message sent successfully!
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Contact Section End -->
 
+<!-- JavaScript for AJAX submission, loading spinner, and toast notification -->
+<script>
+    
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Show loading spinner
+    document.getElementById('loadingSpinner').style.display = 'block';
+
+    // Collect form data
+    const formData = new FormData(this);
+
+    // Send data to the server via AJAX
+    fetch('submit_contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(responseText => {
+        // Hide loading spinner
+        document.getElementById('loadingSpinner').style.display = 'none';
+
+        // Set toast message based on responseText
+        const toastMessage = document.getElementById('toastMessage');
+        if (responseText.includes("Message sent successfully")) {
+            toastMessage.innerText = "Message sent successfully!";
+        } else if (responseText.includes("email failed to send")) {
+            toastMessage.innerText = "Saved to database, but email failed to send.";
+        } else {
+            toastMessage.innerText = "Failed to save message. Please try again.";
+        }
+
+        // Show the toast
+        const toast = new bootstrap.Toast(document.getElementById('submitToast'));
+        toast.show();
+
+        // Reset form fields if successful
+        if (responseText.includes("Message sent successfully")) {
+            document.getElementById('contactForm').reset();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('loadingSpinner').style.display = 'none';
+        alert("An error occurred. Please try again.");
+    });
+});
+</script>
 
     <!-- Newsletter Start -->
     <div class="container-fluid bg-primary newsletter py-5">
@@ -779,22 +846,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
-                    <h1 class="text-white mb-4">Be the first to know. </h1>
-                    <div class="position-relative w-100 mt-3 mb-2">
-                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
-                            placeholder="Enter Your Email" style="height: 48px;">
-                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
-                    </div>
-                    <p class="text-light mb-4">
-                        Sign up for our insight
-                    </p>
+                    <h1 class="text-white mb-4">Be the first to know.</h1>
+                    
+                    <!-- Newsletter Signup Form -->
+                    <form id="newsletterForm" action="submit_newsletter.php" method="POST">
+                        <div class="position-relative w-100 mt-3 mb-2">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="email"
+                                name="newsletter_email" placeholder="Enter Your Email" required style="height: 48px;">
+                            <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2">
+                                <i class="fa fa-paper-plane text-primary fs-4"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
     </div>
-    <!-- Newsletter End -->
 
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+
+    const formData = new FormData(this);
+
+    fetch('submit_newsletter.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(responseText => {
+        alert(responseText); // Display response message
+        this.reset(); // Clear form input
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+</script>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5">
